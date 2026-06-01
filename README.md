@@ -57,6 +57,27 @@ npm run build
 npm run preview
 ```
 
+## デプロイ（GitHub Pages）
+
+`main` ブランチへの push をトリガーに、GitHub Actions（`.github/workflows/deploy.yml`）で
+自動的にビルド・デプロイされます。公開 URL は次のとおりです。
+
+```
+https://shinyanakashima.github.io/maptiler-map-customization-lab/
+```
+
+### 事前準備
+
+ビルド時に MapTiler API キーを埋め込むため、リポジトリに Secret を登録します。
+
+1. GitHub リポジトリの **Settings → Secrets and variables → Actions** を開く
+2. `VITE_MAPTILER_KEY` という名前で MapTiler の API キーを登録する
+
+> [!NOTE]
+> クライアントサイドの地図では API キーがブラウザのバンドルに含まれ公開されます。
+> [MapTiler Cloud](https://cloud.maptiler.com/account/keys/) の **Allowed origins** で
+> 公開ドメイン（`https://shinyanakashima.github.io`）に利用を限定してください。
+
 ## ディレクトリ構成
 
 ```
