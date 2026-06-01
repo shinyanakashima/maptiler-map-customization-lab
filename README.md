@@ -15,6 +15,7 @@ MapTiler の記事「[Top 5 ways to customize your map](https://www.maptiler.com
 
 ## 技術構成
 
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/)
 - [MapTiler Cloud](https://www.maptiler.com/cloud/)（ベースマップ・スタイル）
 - [Vite](https://vitejs.dev/)（開発サーバー・ビルド）
@@ -60,11 +61,17 @@ npm run preview
 
 ```
 .
-├── index.html        # エントリーポイント
+├── index.html              # エントリーポイント
 ├── src/
-│   ├── main.js       # 地図の初期化と各カスタマイズの実装
-│   └── style.css     # レイアウト用スタイル
-├── .env.example      # 環境変数のサンプル
+│   ├── main.tsx            # React のエントリーポイント
+│   ├── App.tsx             # ルートコンポーネント
+│   ├── components/
+│   │   └── MapView.tsx     # 地図の初期化と各カスタマイズの実装
+│   ├── index.css           # レイアウト用スタイル
+│   └── vite-env.d.ts       # 環境変数の型定義
+├── .env.example            # 環境変数のサンプル
+├── tsconfig.json           # TypeScript 設定
+├── vite.config.ts          # Vite 設定
 └── package.json
 ```
 
